@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aegis IELTS Writing Practice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3D59',
+                        secondary: '#17B890'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        .editor { min-height: 400px; }
+        .grammar-issue { background-color: rgba(239, 68, 68, 0.1); }
+        .vocabulary-suggestion { background-color: rgba(59, 130, 246, 0.1); }
+        .structure-improvement { background-color: rgba(16, 185, 129, 0.1); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="flex h-screen">
+        <aside class="w-64 bg-white border-r border-gray-100 flex flex-col">
+            <div class="p-6 border-b border-gray-100">
+              <a href="Aegis Home Page.html" class="text-2xl font-['Pacifico'] text-primary">Aegis</a>
+            </div>
+            <nav class="flex-1 p-4">
+                <div class="space-y-2">
+                    <a href="Web Dashboard.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                        <i class="ri-dashboard-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="Web Reading Module.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                        <i class="ri-book-open-line"></i>
+                        <span>Reading</span>
+                    </a>
+                    <a href="Web Listening Module.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                        <i class="ri-headphone-line"></i>
+                        <span>Listening</span>
+                    </a>
+                    <a href="Web Writing Module.html" class="flex items-center gap-3 px-4 py-3 bg-primary/5 text-primary rounded-lg">
+                        <i class="ri-edit-line"></i>
+                        <span>Writing</span>
+                    </a>
+                    <a href="Web Speaking Module.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                        <i class="ri-mic-line"></i>
+                        <span>Speaking</span>
+                    </a>
+                </div>
+                <div class="mt-8">
+                    <h3 class="px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider">Study Tools</h3>
+                    <div class="mt-4 space-y-2">
+                        </a>
+                        <a href="Web Mock Exam.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                            <i class="ri-time-line"></i>
+                            <span>Mock Exam</span>
+                        </a>
+                        <a href="Web Progress Tracking.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                            <i class="ri-file-list-line"></i>
+                            <span>Progress Tracking</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <div class="p-4 border-t border-gray-100">
+                <div class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg cursor-pointer">
+                    <i class="ri-settings-line"></i>
+                    <span>Settings</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="flex-1 flex flex-col">
+            <header class="bg-white border-b border-gray-100 px-8 py-4">
+                <div class="flex items-center justify-between">
+                    <h1 class="text-xl font-semibold text-gray-900">IELTS Writing Practice</h1>
+                    <div class="flex items-center gap-4">
+                        <button class="flex items-center gap-2 px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-button hover:bg-gray-200 cursor-pointer">
+                            <i class="ri-settings-line"></i>
+                            <span>Settings</span>
+                        </button>
+                        <div class="flex items-center gap-3 cursor-pointer">
+                            <img src="https://public.readdy.ai/ai/img_res/db5750fb4d1b83de68b77bf27d3a32ff.jpg" alt="Profile" class="w-10 h-10 rounded-full object-cover">
+                            <i class="ri-arrow-down-s-line text-gray-600"></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="flex flex-1 overflow-hidden">
+              <div
+                class="w-[60%] border-r border-gray-100 flex flex-col overflow-hidden"
+              >
+                <div class="bg-white border-b border-gray-100 p-6">
+                  <div class="flex items-center justify-between mb-4">
+                    <div>
+                      <h1 class="text-xl font-semibold text-gray-900">
+                        Writing Task 2
+                      </h1>
+                      <p class="text-gray-600">Time remaining: 38:45</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <button
+                        id="fullscreenBtn"
+                        class="w-10 h-10 flex items-center justify-center text-gray-600 hover:bg-gray-100 rounded-full cursor-pointer"
+                      >
+                        <i class="ri-fullscreen-line text-xl"></i>
+                      </button>
+                      <button
+                        id="fontSizeBtn"
+                        class="w-10 h-10 flex items-center justify-center text-gray-600 hover:bg-gray-100 rounded-full cursor-pointer"
+                      >
+                        <i class="ri-font-size-2 text-xl"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                    <p class="text-gray-800">
+                      Some people believe that governments should spend more money
+                      on public services and facilities in rural areas to prevent
+                      migration to urban areas. To what extent do you agree or
+                      disagree with this view?
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <div class="text-sm text-gray-600">
+                      Words: <span id="wordCount">0</span>/250
+                    </div>
+                    <button
+                      id="saveBtn"
+                      class="px-4 py-2 text-sm text-primary border border-primary rounded-button hover:bg-primary/5 cursor-pointer"
+                    >
+                      Save Draft
+                    </button>
+                    <button
+                      id="submitBtn"
+                      class="px-4 py-2 text-sm text-white bg-primary rounded-button cursor-pointer"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+                <div class="flex-1 p-6">
+                  <div
+                    id="editor"
+                    class="min-h-[500px] bg-white p-6 rounded-lg shadow-sm"
+                    contenteditable="true"
+                  ></div>
+                </div>
+              </div>
+              <div class="w-[40%] flex flex-col">
+                <div class="bg-white border-b border-gray-100 p-6">
+                  <h2 class="text-lg font-semibold text-gray-900 mb-4">
+                    AI Writing Assistant
+                  </h2>
+                  <div class="flex items-center gap-2">
+                    <button
+                      class="px-4 py-2 text-sm text-white bg-primary rounded-full cursor-pointer"
+                    >
+                      Real-time
+                    </button>
+                    <button
+                      class="px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-full cursor-pointer"
+                    >
+                      Final Check
+                    </button>
+                  </div>
+                </div>
+                <div class="flex-1 overflow-auto p-6">
+                  <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                      <h3 class="font-semibold text-gray-900 mb-4">
+                        Grammar & Structure
+                      </h3>
+                      <div class="space-y-4">
+                        <div
+                          class="flex items-start gap-3 p-3 bg-red-50 rounded-lg"
+                        >
+                          <i class="ri-error-warning-line text-red-500 mt-0.5"></i>
+                          <div>
+                            <p class="text-red-600 font-medium">
+                              Subject-verb agreement error
+                            </p>
+                            <p class="text-sm text-gray-600">
+                              Consider revising: "The government have" to "The
+                              government has"
+                            </p>
+                          </div>
+                        </div>
+                        <div
+                          class="flex items-start gap-3 p-3 bg-blue-50 rounded-lg"
+                        >
+                          <i class="ri-information-line text-blue-500 mt-0.5"></i>
+                          <div>
+                            <p class="text-blue-600 font-medium">
+                              Word choice suggestion
+                            </p>
+                            <p class="text-sm text-gray-600">
+                              Consider using "implement" instead of "put in place"
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                      <h3 class="font-semibold text-gray-900 mb-4">
+                        Task Achievement Tips
+                      </h3>
+                      <div class="space-y-3">
+                        <div class="flex items-start gap-3">
+                          <div
+                            class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0"
+                          >
+                            <i class="ri-check-line text-green-500"></i>
+                          </div>
+                          <p class="text-gray-600">
+                            Clear position stated in introduction
+                          </p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                          <div
+                            class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0"
+                          >
+                            <i
+                              class="ri-checkbox-blank-circle-line text-gray-400"
+                            ></i>
+                          </div>
+                          <p class="text-gray-600">
+                            Include specific examples to support arguments
+                          </p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                          <div
+                            class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0"
+                          >
+                            <i
+                              class="ri-checkbox-blank-circle-line text-gray-400"
+                            ></i>
+                          </div>
+                          <p class="text-gray-600">Develop each main idea fully</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                      <h3 class="font-semibold text-gray-900 mb-4">
+                        Model Answer Analysis
+                      </h3>
+                      <button
+                        id="showModelBtn"
+                        class="w-full px-4 py-3 text-sm text-primary border border-primary rounded-button hover:bg-primary/5 cursor-pointer flex items-center justify-center gap-2"
+                      >
+                        <i class="ri-eye-line"></i>
+                        <span>Show Model Answer</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>>
+    </div>
+
+    <script>
+        const editor = document.getElementById('editor');
+        const wordCount = document.getElementById('wordCount');
+        const saveBtn = document.getElementById('saveBtn');
+        const fontSizeBtn = document.getElementById('fontSizeBtn');
+        const focusModeBtn = document.getElementById('focusModeBtn');
+        let fontSize = 16;
+        let isFocusMode = false;
+
+        editor.addEventListener('input', () => {
+            const words = editor.innerText.trim().split(/\s+/).filter(word => word.length > 0);
+            wordCount.textContent = words.length;
+        });
+
+        fontSizeBtn.addEventListener('click', () => {
+            fontSize = fontSize >= 20 ? 16 : fontSize + 2;
+            editor.style.fontSize = `${fontSize}px`;
+        });
+
+        focusModeBtn.addEventListener('click', () => {
+            isFocusMode = !isFocusMode;
+            document.body.classList.toggle('bg-gray-900');
+            focusModeBtn.innerHTML = isFocusMode ? 
+                '<i class="ri-focus-2-line text-xl"></i>' : 
+                '<i class="ri-focus-3-line text-xl"></i>';
+        });
+
+        saveBtn.addEventListener('click', () => {
+            const notification = document.createElement('div');
+            notification.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg';
+            notification.textContent = 'Draft saved successfully';
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 3000);
+        });
+
+        let lastContent = '';
+        setInterval(() => {
+            const currentContent = editor.innerText;
+            if (currentContent !== lastContent) {
+                lastContent = currentContent;
+                const words = currentContent.split(/\s+/);
+                words.forEach((word, index) => {
+                    if (/[A-Z]/.test(word) && index > 0) {
+                        const span = document.createElement('span');
+                        span.className = 'grammar-issue';
+                        editor.innerHTML = editor.innerHTML.replace(word, span.outerHTML);
+                    }
+                });
+            }
+        }, 2000);
+    </script>
+</body>
+</html>

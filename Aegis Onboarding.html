@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aegis IELTS Registration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3D59',
+                        secondary: '#17B890'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        .step-content {
+            display: none;
+        }
+        .step-content.active {
+            display: block;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #1E3D59;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .placement-test-timer {
+            display: none;
+        }
+        .placement-test-timer.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-white to-gray-50">
+    <div class="container mx-auto px-4 py-8 min-h-screen flex items-center justify-center">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-3xl p-8">
+            <div class="flex items-center justify-center mb-8">
+                <h1 class="text-3xl font-['Pacifico'] text-primary">Aegis</h1>
+            </div>
+
+            <div class="mb-8">
+                <div class="flex justify-between items-center relative mb-4">
+                    <div class="absolute left-0 right-0 top-1/2 h-0.5 bg-gray-200 -z-10"></div>
+                    <div class="absolute left-0 right-0 top-1/2 h-0.5 bg-primary -z-10 transition-all duration-300" style="width: 0%" id="progress-bar"></div>
+                    <div id="step-indicator-1" class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center relative z-10">1</div>
+                    <div id="step-indicator-2" class="w-8 h-8 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center relative z-10">2</div>
+                    <div id="step-indicator-3" class="w-8 h-8 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center relative z-10">3</div>
+                    <div id="step-indicator-4" class="w-8 h-8 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center relative z-10">4</div>
+                </div>
+            </div>
+
+            <div id="step1" class="step-content active">
+                <h2 class="text-2xl font-semibold mb-6 text-center">Create Your Account</h2>
+                <form id="accountForm" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" class="w-full px-4 py-2 border rounded-button focus:outline-none focus:ring-2 focus:ring-primary/20" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                        <input type="password" class="w-full px-4 py-2 border rounded-button focus:outline-none focus:ring-2 focus:ring-primary/20" required>
+                    </div>
+                    <button type="button" class="w-full bg-primary text-white py-2 px-4 rounded-button hover:bg-primary/90 transition-colors cursor-pointer">Continue</button>
+                    <div class="relative my-6">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-200"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-white text-gray-500">Or continue with</span>
+                        </div>
+                    </div>
+                    <button type="button" class="w-full border border-gray-200 bg-white text-gray-700 py-2 px-4 rounded-button hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                        <i class="ri-google-fill text-xl"></i>
+                        Sign in with Google
+                    </button>
+                </form>
+            </div>
+
+            <div id="step2" class="step-content">
+                <h2 class="text-2xl font-semibold mb-6 text-center">Set Your Goals</h2>
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-4">Target IELTS Score: <span id="scoreValue">7.0</span></label>
+                        <input type="range" min="4" max="9" step="0.5" value="7.0" class="w-full h-2 bg-gray-200 rounded-full appearance-none cursor-pointer" id="scoreSlider">
+                        <div class="flex justify-between text-xs text-gray-500 mt-1">
+                            <span>4.0</span>
+                            <span>9.0</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Exam Date</label>
+                        <input type="date" class="w-full px-4 py-2 border rounded-button focus:outline-none focus:ring-2 focus:ring-primary/20">
+                    </div>
+                    <div class="flex gap-4">
+                        <button type="button" class="flex-1 border border-gray-200 text-gray-700 py-2 px-4 rounded-button hover:bg-gray-50 transition-colors cursor-pointer">Back</button>
+                        <button type="button" class="flex-1 bg-primary text-white py-2 px-4 rounded-button hover:bg-primary/90 transition-colors cursor-pointer">Continue</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="step3" class="step-content">
+                <h2 class="text-2xl font-semibold mb-6 text-center">Placement Test</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div class="border rounded-lg p-4 cursor-pointer hover:border-primary transition-colors">
+                        <div class="w-12 h-12 flex items-center justify-center mb-2">
+                            <i class="ri-book-open-line text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="font-medium mb-1">Reading</h3>
+                        <p class="text-sm text-gray-500">15 minutes</p>
+                    </div>
+                    <div class="border rounded-lg p-4 cursor-pointer hover:border-primary transition-colors">
+                        <div class="w-12 h-12 flex items-center justify-center mb-2">
+                            <i class="ri-headphone-line text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="font-medium mb-1">Listening</h3>
+                        <p class="text-sm text-gray-500">20 minutes</p>
+                    </div>
+                    <div class="border rounded-lg p-4 cursor-pointer hover:border-primary transition-colors">
+                        <div class="w-12 h-12 flex items-center justify-center mb-2">
+                            <i class="ri-mic-line text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="font-medium mb-1">Speaking</h3>
+                        <p class="text-sm text-gray-500">10 minutes</p>
+                    </div>
+                </div>
+                <div class="placement-test-timer bg-gray-50 p-4 rounded-lg mb-6">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium">Time Remaining</span>
+                        <span class="text-xl font-semibold" id="timer">15:00</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                        <div class="bg-primary h-2 rounded-full" style="width: 100%" id="timerProgress"></div>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <button type="button" class="flex-1 border border-gray-200 text-gray-700 py-2 px-4 rounded-button hover:bg-gray-50 transition-colors cursor-pointer">Back</button>
+                    <button type="button" class="flex-1 bg-primary text-white py-2 px-4 rounded-button hover:bg-primary/90 transition-colors cursor-pointer">Continue</button>
+                </div>
+            </div>
+
+            <div id="step4" class="step-content">
+                <h2 class="text-2xl font-semibold mb-6 text-center">Your Personalized Study Plan</h2>
+                <div class="mb-8">
+                    <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                        <h3 class="text-lg font-medium mb-4">Skill Breakdown</h3>
+                        <div id="skillChart" style="width: 100%; height: 300px;"></div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="border rounded-lg p-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="ri-calendar-line text-primary"></i>
+                                <h4 class="font-medium">Study Duration</h4>
+                            </div>
+                            <p class="text-gray-600">12 weeks until exam date</p>
+                        </div>
+                        <div class="border rounded-lg p-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="ri-time-line text-primary"></i>
+                                <h4 class="font-medium">Weekly Commitment</h4>
+                            </div>
+                            <p class="text-gray-600">10 hours per week</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <button type="button" class="flex-1 border border-gray-200 text-gray-700 py-2 px-4 rounded-button hover:bg-gray-50 transition-colors cursor-pointer">Back</button>
+                    <a href="Web Dashboard.html" class="flex-1">
+                        <button type="button" class="w-full bg-primary text-white py-2 px-4 rounded-button hover:bg-primary/90 transition-colors cursor-pointer">Start your journey</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <script>
+        const mockData = {
+            skills: {
+                reading: 6.5,
+                listening: 7.0,
+                speaking: 6.0,
+                writing: 6.5
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const steps = document.querySelectorAll('.step-content');
+            const progressBar = document.getElementById('progress-bar');
+            const stepIndicators = [
+                document.getElementById('step-indicator-1'),
+                document.getElementById('step-indicator-2'),
+                document.getElementById('step-indicator-3'),
+                document.getElementById('step-indicator-4')
+            ];
+            let currentStep = 1;
+
+            function updateProgress() {
+                progressBar.style.width = ((currentStep - 1) / 3 * 100) + '%';
+                stepIndicators.forEach((indicator, index) => {
+                    if (index < currentStep) {
+                        indicator.classList.add('bg-primary', 'text-white');
+                        indicator.classList.remove('bg-gray-200', 'text-gray-600');
+                    } else {
+                        indicator.classList.add('bg-gray-200', 'text-gray-600');
+                        indicator.classList.remove('bg-primary', 'text-white');
+                    }
+                });
+            }
+
+            document.querySelectorAll('button').forEach(button => {
+                button.addEventListener('click', function() {
+                    if (this.textContent.includes('Continue')) {
+                        if (currentStep < 4) {
+                            steps[currentStep - 1].classList.remove('active');
+                            steps[currentStep].classList.add('active');
+                            currentStep++;
+                            updateProgress();
+                            if (currentStep === 4) {
+                                initializeChart();
+                            }
+                        }
+                    } else if (this.textContent.includes('Back')) {
+                        if (currentStep > 1) {
+                            steps[currentStep - 1].classList.remove('active');
+                            steps[currentStep - 2].classList.add('active');
+                            currentStep--;
+                            updateProgress();
+                        }
+                    }
+                });
+            });
+
+            const scoreSlider = document.getElementById('scoreSlider');
+            const scoreValue = document.getElementById('scoreValue');
+            scoreSlider.addEventListener('input', function() {
+                scoreValue.textContent = this.value;
+            });
+
+            function initializeChart() {
+                const chart = echarts.init(document.getElementById('skillChart'));
+                const option = {
+                    animation: false,
+                    radar: {
+                        indicator: [
+                            { name: 'Reading', max: 9 },
+                            { name: 'Listening', max: 9 },
+                            { name: 'Speaking', max: 9 },
+                            { name: 'Writing', max: 9 }
+                        ]
+                    },
+                    series: [{
+                        type: 'radar',
+                        data: [{
+                            value: [
+                                mockData.skills.reading,
+                                mockData.skills.listening,
+                                mockData.skills.speaking,
+                                mockData.skills.writing
+                            ],
+                            name: 'Current Level',
+                            itemStyle: {
+                                color: '#1E3D59'
+                            },
+                            areaStyle: {
+                                color: 'rgba(30, 61, 89, 0.1)'
+                            }
+                        }]
+                    }]
+                };
+                chart.setOption(option);
+            }
+
+            updateProgress();
+        });
+    </script>
+</body>
+</html>

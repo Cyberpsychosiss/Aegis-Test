@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aegis - AI-powered IELTS Learning Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3D59',
+                        secondary: '#17B890'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body { font-family: 'Inter', sans-serif; }
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-white">
+    <nav class="fixed w-full bg-white/90 backdrop-blur-sm z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-['Pacifico'] text-primary">Aegis</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-primary">Features</a>
+                    <a href="#how-it-works" class="text-gray-600 hover:text-primary">How It Works</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-primary">Testimonials</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-primary">Pricing</a>
+                    <a href="Aegis Onboarding.html">
+                        <button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap cursor-pointer">
+                            Start Free Trial
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 pb-24 overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://public.readdy.ai/ai/img_res/bc4cd0d132992e0f8273c9ee4ecbcffe.jpg')] bg-cover bg-center opacity-10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-5xl font-bold font-poppins text-primary mb-6">Master IELTS with AI-Powered Learning</h1>
+                    <p class="text-xl text-gray-600 mb-8">Experience personalized IELTS preparation with our advanced AI tutor. Get real-time feedback, adaptive learning paths, and guaranteed score improvement.</p>
+                    <div class="flex gap-4">
+                        <button class="bg-primary text-white px-8 py-4 !rounded-button hover:bg-primary/90 transition-colors text-lg font-semibold whitespace-nowrap cursor-pointer">Get Free Assessment</button>
+                        <button class="border-2 border-primary text-primary px-8 py-4 !rounded-button hover:bg-primary/5 transition-colors text-lg font-semibold whitespace-nowrap cursor-pointer">Watch Demo</button>
+                    </div>
+                    <div class="mt-12 flex gap-8">
+                        <div>
+                            <div class="text-3xl font-bold text-primary">98%</div>
+                            <div class="text-gray-600">Success Rate</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-primary">50K+</div>
+                            <div class="text-gray-600">Active Learners</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-primary">7.5+</div>
+                            <div class="text-gray-600">Avg. Band Score</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://public.readdy.ai/ai/img_res/a280e2fbc59f1bcd9fa926d6f4a96b52.jpg" alt="AI Tutor Interface" class="w-full rounded-2xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold font-poppins text-primary mb-4">Why Choose Aegis?</h2>
+                <p class="text-xl text-gray-600">Advanced AI technology combined with proven learning methodologies</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-brain-line text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Personalized Learning</h3>
+                    <p class="text-gray-600">AI-driven study plans tailored to your learning style, goals, and current proficiency level.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-feedback-line text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Instant Feedback</h3>
+                    <p class="text-gray-600">Get detailed analysis and suggestions on your writing and speaking exercises in real-time.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-line-chart-line text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Progress Tracking</h3>
+                    <p class="text-gray-600">Monitor your improvement with detailed analytics and performance insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold font-poppins text-primary mb-4">How It Works</h2>
+                <p class="text-xl text-gray-600">Your journey to IELTS success in 5 simple steps</p>
+            </div>
+            <div class="relative">
+                <div class="absolute top-1/2 left-0 right-0 h-0.5 bg-primary/20"></div>
+                <div class="grid md:grid-cols-5 gap-8 relative">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg text-center relative">
+                        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 relative z-10">1</div>
+                        <h3 class="text-lg font-bold text-primary mb-2">Register</h3>
+                        <p class="text-gray-600">Create your account and set your target score</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg text-center relative">
+                        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 relative z-10">2</div>
+                        <h3 class="text-lg font-bold text-primary mb-2">AI Assessment</h3>
+                        <p class="text-gray-600">Complete initial tests to evaluate your current level</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg text-center relative">
+                        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 relative z-10">3</div>
+                        <h3 class="text-lg font-bold text-primary mb-2">Study Plan</h3>
+                        <p class="text-gray-600">Receive your personalized learning pathway</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg text-center relative">
+                        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 relative z-10">4</div>
+                        <h3 class="text-lg font-bold text-primary mb-2">Practice</h3>
+                        <p class="text-gray-600">Complete exercises with real-time AI feedback</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg text-center relative">
+                        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 relative z-10">5</div>
+                        <h3 class="text-lg font-bold text-primary mb-2">Success</h3>
+                        <p class="text-gray-600">Achieve your target IELTS score</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold font-poppins text-primary mb-4">Success Stories</h2>
+                <p class="text-xl text-gray-600">Join thousands of successful IELTS achievers</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <img src="https://public.readdy.ai/ai/img_res/9f9d8b55aeed04462151e491a4a84950.jpg" alt="Sarah Chen" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h3 class="font-bold text-primary">Sarah Chen</h3>
+                            <p class="text-gray-600">Band Score: 8.0</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Aegis transformed my IELTS preparation journey. The AI feedback helped me identify and improve my weaknesses quickly. I achieved my target score in just 2 months!"</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <img src="https://public.readdy.ai/ai/img_res/ebadd906f2bcc3309d1483ac521622d7.jpg" alt="Mohammed Al-Rashid" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h3 class="font-bold text-primary">Mohammed Al-Rashid</h3>
+                            <p class="text-gray-600">Band Score: 7.5</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"The personalized study plan and real-time corrections made a huge difference. I especially loved the speaking practice feature with instant pronunciation feedback."</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <img src="https://public.readdy.ai/ai/img_res/e847b9e44af3f22df090049cd449cfbb.jpg" alt="Elena Petrova" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h3 class="font-bold text-primary">Elena Petrova</h3>
+                            <p class="text-gray-600">Band Score: 8.5</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"As a non-native speaker, I was struggling with writing tasks. Aegis's AI writing assistant helped me improve my structure and vocabulary significantly."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold font-poppins mb-6">Ready to Start Your IELTS Journey?</h2>
+                    <p class="text-xl mb-8">Join thousands of successful students who achieved their target IELTS score with Aegis.</p>
+                    <button class="bg-white text-primary px-8 py-4 !rounded-button hover:bg-gray-100 transition-colors text-lg font-semibold whitespace-nowrap cursor-pointer">Start Free Trial</button>
+                </div>
+                <div>
+                    <img src="https://public.readdy.ai/ai/img_res/d0e40e385c67f4bd19444282307d4e1d.jpg" alt="Study with AI" class="w-full rounded-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-50 pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <span class="text-2xl font-['Pacifico'] text-primary mb-4 block">Aegis</span>
+                    <p class="text-gray-600">AI-powered IELTS preparation platform helping students achieve their target scores through personalized learning.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-primary mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:text-primary">About Us</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary">Features</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary">Pricing</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-primary mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:text-primary">Help Center</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-primary mb-4">Newsletter</h3>
+                    <p class="text-gray-600 mb-4">Subscribe to get IELTS tips and updates</p>
+                    <form class="flex gap-2">
+                        <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-2 rounded border-gray-200 focus:border-primary focus:ring-primary">
+                        <button type="submit" class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap cursor-pointer">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8 flex justify-between items-center">
+                <p class="text-gray-600">© 2025 Aegis. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-gray-600 hover:text-primary">
+                        <i class="ri-facebook-fill text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-primary">
+                        <i class="ri-twitter-fill text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-primary">
+                        <i class="ri-linkedin-fill text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-primary">
+                        <i class="ri-instagram-fill text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

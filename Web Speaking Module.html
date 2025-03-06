@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aegis IELTS Speaking Practice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3D59',
+                        secondary: '#17B890'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        .wave { animation: wave 1.5s infinite ease-in-out; }
+        @keyframes wave {
+            0% { transform: scaleY(0.2); }
+            50% { transform: scaleY(1); }
+            100% { transform: scaleY(0.2); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="flex h-screen">
+        <aside class="w-64 bg-white border-r border-gray-100 flex flex-col">
+            <div class="p-6 border-b border-gray-100">
+                <a href="Aegis Home Page.html" class="text-2xl font-['Pacifico'] text-primary">Aegis</a>
+            </div>
+            <nav class="flex-1 p-4">
+                <div class="space-y-2">
+                    <a href="Web Dashboard.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                        <i class="ri-dashboard-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="Web Reading Module.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                        <i class="ri-book-open-line"></i>
+                        <span>Reading</span>
+                    </a>
+                    <a href="Web Listening Module.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                        <i class="ri-headphone-line"></i>
+                        <span>Listening</span>
+                    </a>
+                    <a href="Web Writing Module.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                        <i class="ri-edit-line"></i>
+                        <span>Writing</span>
+                    </a>
+                    <a href="Web Speaking Module.html" class="flex items-center gap-3 px-4 py-3 bg-primary/5 text-primary rounded-lg">
+                        <i class="ri-mic-line"></i>
+                        <span>Speaking</span>
+                    </a>
+                </div>
+                <div class="mt-8">
+                    <h3 class="px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider">Study Tools</h3>
+                    <div class="mt-4 space-y-2">
+                        </a>
+                        <a href="Web Mock Exam.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                            <i class="ri-time-line"></i>
+                            <span>Mock Exam</span>
+                        </a>
+                        <a href="Web Progress Tracking.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                            <i class="ri-file-list-line"></i>
+                            <span>Progress Tracking</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <div class="p-4 border-t border-gray-100">
+                <div class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg cursor-pointer">
+                    <i class="ri-settings-line"></i>
+                    <span>Settings</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="flex-1 flex flex-col overflow-hidden">
+            <header class="bg-white border-b border-gray-100 px-8 py-4">
+                <div class="flex items-center justify-between">
+                    <h1 class="text-xl font-semibold text-gray-900">IELTS Speaking Practice</h1>
+                    <div class="flex items-center gap-4">
+                        <button class="flex items-center gap-2 px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-button hover:bg-gray-200 cursor-pointer">
+                            <i class="ri-settings-line"></i>
+                            <span>Settings</span>
+                        </button>
+                        <div class="flex items-center gap-3 cursor-pointer">
+                            <img src="https://public.readdy.ai/ai/img_res/db5750fb4d1b83de68b77bf27d3a32ff.jpg" alt="Profile" class="w-10 h-10 rounded-full object-cover">
+                            <i class="ri-arrow-down-s-line text-gray-600"></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="flex-1 flex">
+                <div class="w-2/3 border-r border-gray-100 flex flex-col">
+                    <div class="p-8 flex-1 flex flex-col">
+                        <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
+                            <div class="flex items-center justify-between mb-6">
+                                <div>
+                                    <h2 class="text-lg font-semibold text-gray-900">Speaking Test - Part 2</h2>
+                                    <p class="text-gray-600">Describe a place you like to visit</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <button id="recordButton" class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full hover:bg-primary/90 cursor-pointer">
+                                        <i class="ri-mic-line text-xl"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center gap-8">
+                                <div class="w-32 h-32 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/d490965b75d08432241687d136a0e093.jpg" alt="AI Examiner" class="w-full h-full object-cover">
+                                </div>
+                                <div class="flex items-center gap-2" id="audioWaves">
+                                    <div class="w-1 h-8 bg-primary/20 rounded-full wave" style="animation-delay: -1.2s"></div>
+                                    <div class="w-1 h-8 bg-primary/20 rounded-full wave" style="animation-delay: -1.1s"></div>
+                                    <div class="w-1 h-8 bg-primary/20 rounded-full wave" style="animation-delay: -1.0s"></div>
+                                    <div class="w-1 h-8 bg-primary/20 rounded-full wave" style="animation-delay: -0.9s"></div>
+                                    <div class="w-1 h-8 bg-primary/20 rounded-full wave" style="animation-delay: -0.8s"></div>
+                                    <div class="w-1 h-8 bg-primary/20 rounded-full wave" style="animation-delay: -0.7s"></div>
+                                    <div class="w-1 h-8 bg-primary/20 rounded-full wave" style="animation-delay: -0.6s"></div>
+                                    <div class="w-1 h-8 bg-primary/20 rounded-full wave" style="animation-delay: -0.5s"></div>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-lg font-medium text-gray-900 mb-2">Time Remaining: <span id="timer">02:00</span></p>
+                                    <p class="text-gray-600">Speak about the topic for 1-2 minutes</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-sm p-6 flex-1">
+                            <div class="flex items-center justify-between mb-6">
+                                <h3 class="font-semibold text-gray-900">Live Transcription</h3>
+                                <button class="px-3 py-1.5 text-sm text-gray-600 bg-gray-100 rounded-full hover:bg-gray-200 cursor-pointer whitespace-nowrap">
+                                    Clear All
+                                </button>
+                            </div>
+                            <div class="space-y-4 text-gray-600 leading-relaxed" id="transcription"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-1/3 flex flex-col">
+                    <div class="p-8 flex-1 overflow-auto">
+                        <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
+                            <h3 class="font-semibold text-gray-900 mb-4">Real-time Analysis</h3>
+                            <div class="space-y-6">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-sm font-medium text-gray-700">Pronunciation</span>
+                                        <span class="text-sm text-primary" id="pronunciationScore">92%</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-100 rounded-full">
+                                        <div class="h-full w-[92%] bg-primary rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-sm font-medium text-gray-700">Fluency</span>
+                                        <span class="text-sm text-primary" id="fluencyScore">88%</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-100 rounded-full">
+                                        <div class="h-full w-[88%] bg-primary rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-sm font-medium text-gray-700">Grammar</span>
+                                        <span class="text-sm text-primary" id="grammarScore">85%</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-100 rounded-full">
+                                        <div class="h-full w-[85%] bg-primary rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-sm font-medium text-gray-700">Vocabulary</span>
+                                        <span class="text-sm text-primary" id="vocabularyScore">90%</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-100 rounded-full">
+                                        <div class="h-full w-[90%] bg-primary rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-sm p-6">
+                            <h3 class="font-semibold text-gray-900 mb-4">Suggestions</h3>
+                            <div class="space-y-4">
+                                <div class="p-4 bg-green-50 rounded-lg">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <i class="ri-checkbox-circle-line text-green-500"></i>
+                                        <span class="font-medium text-gray-900">Good use of connectives</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">Your transitions between ideas are smooth and natural.</p>
+                                </div>
+                                <div class="p-4 bg-yellow-50 rounded-lg">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <i class="ri-error-warning-line text-yellow-500"></i>
+                                        <span class="font-medium text-gray-900">Consider adding more details</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">Try to include specific examples to support your points.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        let isRecording = false;
+        const recordButton = document.getElementById('recordButton');
+        const audioWaves = document.getElementById('audioWaves');
+        const timer = document.getElementById('timer');
+        const transcription = document.getElementById('transcription');
+
+        recordButton.addEventListener('click', () => {
+            isRecording = !isRecording;
+            if (isRecording) {
+                recordButton.innerHTML = '<i class="ri-stop-line text-xl"></i>';
+                audioWaves.querySelectorAll('div').forEach(wave => {
+                    wave.style.backgroundColor = 'rgba(30, 61, 89, 1)';
+                });
+                startTimer();
+                startTranscription();
+            } else {
+                recordButton.innerHTML = '<i class="ri-mic-line text-xl"></i>';
+                audioWaves.querySelectorAll('div').forEach(wave => {
+                    wave.style.backgroundColor = 'rgba(30, 61, 89, 0.2)';
+                });
+                stopTimer();
+            }
+        });
+
+        function startTimer() {
+            let time = 120;
+            timer.textContent = '02:00';
+            const interval = setInterval(() => {
+                time--;
+                const minutes = Math.floor(time / 60);
+                const seconds = time % 60;
+                timer.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+                if (time <= 0) {
+                    clearInterval(interval);
+                    recordButton.click();
+                }
+            }, 1000);
+        }
+
+        function stopTimer() {
+            timer.textContent = '02:00';
+        }
+
+        function startTranscription() {
+            const words = [
+                "I would like to talk about",
+                "a beautiful coastal town",
+                "that I visited last summer.",
+                "The scenery was breathtaking",
+                "with crystal clear waters",
+                "and white sandy beaches."
+            ];
+            let index = 0;
+            const interval = setInterval(() => {
+                if (index < words.length && isRecording) {
+                    const p = document.createElement('p');
+                    p.textContent = words[index];
+                    transcription.appendChild(p);
+                    index++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

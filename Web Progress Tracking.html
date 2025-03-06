@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Aegis IELTS Mistakes Review</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3D59',
+                        secondary: '#17B890'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        .chart-container { height: 300px; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="flex h-screen">
+        <aside class="w-64 bg-white border-r border-gray-100 flex flex-col">
+            <div class="p-6 border-b border-gray-100">
+                <a href="Aegis Home Page.html" class="text-2xl font-['Pacifico'] text-primary">Aegis</a>
+            </div>
+            <nav class="flex-1 p-4">
+                <div class="space-y-2">
+                    <a href="Web Dashboard.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                        <i class="ri-dashboard-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="Web Reading Module.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                        <i class="ri-book-open-line"></i>
+                        <span>Reading</span>
+                    </a>
+                    <a href="Web Listening Module.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                        <i class="ri-headphone-line"></i>
+                        <span>Listening</span>
+                    </a>
+                    <a href="Web Writing Module.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                        <i class="ri-edit-line"></i>
+                        <span>Writing</span>
+                    </a>
+                    <a href="Web Speaking Module.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                        <i class="ri-mic-line"></i>
+                        <span>Speaking</span>
+                    </a>
+                </div>
+                <div class="mt-8">
+                    <h3 class="px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider">Study Tools</h3>
+                    <div class="mt-4 space-y-2">
+                        </a>
+                        <a href="Web Mock Exam.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                            <i class="ri-time-line"></i>
+                            <span>Mock Exam</span>
+                        </a>
+                        <a href="Web Progress Tracking.html" class="flex items-center gap-3 px-4 py-3 bg-primary/5 text-primary rounded-lg">
+                            <i class="ri-file-list-line"></i>
+                            <span>Progress Tracking</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <div class="p-4 border-t border-gray-100">
+                <div class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg cursor-pointer">
+                    <i class="ri-settings-line"></i>
+                    <span>Settings</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="flex-1 overflow-auto">
+            <header class="bg-white border-b border-gray-100 sticky top-0 z-10">
+                <div class="flex items-center justify-between px-8 py-4">
+                    <div>
+                        <h1 class="text-2xl font-semibold text-gray-900">Mistakes Review</h1>
+                        <p class="text-gray-600">Track your progress and learn from your mistakes</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <button class="px-4 py-2 text-sm text-primary border border-primary rounded-button hover:bg-primary/5 cursor-pointer">
+                            <i class="ri-download-line mr-2"></i>
+                            Export Report
+                        </button>
+                    </div>
+                </div>
+                <div class="px-8 pb-4">
+                    <div class="flex items-center gap-4">
+                        <button class="px-4 py-2 text-sm text-white bg-primary rounded-full cursor-pointer">All Time</button>
+                        <button class="px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-full cursor-pointer">Last Month</button>
+                        <button class="px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-full cursor-pointer">Last Week</button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="p-8">
+                <div class="grid grid-cols-4 gap-6 mb-8">
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center">
+                                <i class="ri-close-line text-red-500 text-2xl"></i>
+                            </div>
+                            <span class="text-sm text-gray-500">Total</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-gray-900">124</h3>
+                        <p class="text-gray-600">Mistakes Made</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center">
+                                <i class="ri-check-line text-green-500 text-2xl"></i>
+                            </div>
+                            <span class="text-sm text-gray-500">Total</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-gray-900">89</h3>
+                        <p class="text-gray-600">Mistakes Reviewed</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-yellow-50 rounded-full flex items-center justify-center">
+                                <i class="ri-timer-line text-yellow-500 text-2xl"></i>
+                            </div>
+                            <span class="text-sm text-gray-500">Average</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-gray-900">35</h3>
+                        <p class="text-gray-600">Minutes to Review</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center">
+                                <i class="ri-line-chart-line text-blue-500 text-2xl"></i>
+                            </div>
+                            <span class="text-sm text-gray-500">Progress</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-gray-900">71.8%</h3>
+                        <p class="text-gray-600">Review Rate</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-6 mb-8">
+                    <div class="col-span-2 bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-lg font-semibold text-gray-900">Mistakes Distribution</h2>
+                            <div class="flex items-center gap-2">
+                                <button class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full hover:bg-gray-200 cursor-pointer">Week</button>
+                                <button class="px-3 py-1 text-sm text-white bg-primary rounded-full cursor-pointer">Month</button>
+                                <button class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full hover:bg-gray-200 cursor-pointer">Year</button>
+                            </div>
+                        </div>
+                        <div id="mistakesChart" class="chart-container"></div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h2 class="text-lg font-semibold text-gray-900 mb-6">Common Error Types</h2>
+                        <div id="errorTypesChart" class="chart-container"></div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm">
+                    <div class="p-6 border-b border-gray-100">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-lg font-semibold text-gray-900">Recent Mistakes</h2>
+                            <div class="flex items-center gap-4">
+                                <div class="relative">
+                                    <input type="text" placeholder="Search mistakes..." class="pl-10 pr-4 py-2 text-sm bg-gray-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20">
+                                    <i class="ri-search-line absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                                </div>
+                                <select class="px-4 py-2 text-sm bg-gray-50 rounded-lg border-none focus:outline-none focus:ring-2 focus:ring-primary/20">
+                                    <option>All Skills</option>
+                                    <option>Reading</option>
+                                    <option>Listening</option>
+                                    <option>Writing</option>
+                                    <option>Speaking</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                                <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="ri-book-open-line text-blue-500"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h3 class="font-medium text-gray-900">Reading - Academic Passage 1</h3>
+                                        <span class="text-sm text-gray-500">2 hours ago</span>
+                                    </div>
+                                    <p class="text-gray-600 mb-3">Incorrect interpretation of the author's argument about urban transportation development.</p>
+                                    <div class="flex items-center gap-2">
+                                        <span class="px-2 py-1 text-xs bg-red-50 text-red-600 rounded">Main Idea</span>
+                                        <span class="px-2 py-1 text-xs bg-yellow-50 text-yellow-600 rounded">Inference</span>
+                                    </div>
+                                </div>
+                                <button class="px-4 py-2 text-sm text-primary border border-primary rounded-button hover:bg-primary/5 cursor-pointer whitespace-nowrap">Review Now</button>
+                            </div>
+
+                            <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                                <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="ri-headphone-line text-green-500"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h3 class="font-medium text-gray-900">Listening - Section 3</h3>
+                                        <span class="text-sm text-gray-500">Yesterday</span>
+                                    </div>
+                                    <p class="text-gray-600 mb-3">Missed key details in the discussion about research methodology.</p>
+                                    <div class="flex items-center gap-2">
+                                        <span class="px-2 py-1 text-xs bg-blue-50 text-blue-600 rounded">Details</span>
+                                        <span class="px-2 py-1 text-xs bg-purple-50 text-purple-600 rounded">Note-taking</span>
+                                    </div>
+                                </div>
+                                <button class="px-4 py-2 text-sm text-primary border border-primary rounded-button hover:bg-primary/5 cursor-pointer whitespace-nowrap">Review Now</button>
+                            </div>
+
+                            <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                                <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="ri-pencil-line text-purple-500"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h3 class="font-medium text-gray-900">Writing - Task 2</h3>
+                                        <span class="text-sm text-gray-500">2 days ago</span>
+                                    </div>
+                                    <p class="text-gray-600 mb-3">Limited use of advanced vocabulary and complex sentence structures.</p>
+                                    <div class="flex items-center gap-2">
+                                        <span class="px-2 py-1 text-xs bg-orange-50 text-orange-600 rounded">Vocabulary</span>
+                                        <span class="px-2 py-1 text-xs bg-pink-50 text-pink-600 rounded">Grammar</span>
+                                    </div>
+                                </div>
+                                <button class="px-4 py-2 text-sm text-primary border border-primary rounded-button hover:bg-primary/5 cursor-pointer whitespace-nowrap">Review Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const mistakesChart = echarts.init(document.getElementById('mistakesChart'));
+        const errorTypesChart = echarts.init(document.getElementById('errorTypesChart'));
+
+        const mistakesOption = {
+            animation: false,
+            tooltip: {
+                trigger: 'axis',
+                backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                borderColor: '#eee',
+                borderWidth: 1,
+                textStyle: { color: '#1f2937' }
+            },
+            grid: { top: 10, right: 30, bottom: 30, left: 40 },
+            xAxis: {
+                type: 'category',
+                data: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                axisLine: { lineStyle: { color: '#eee' } },
+                axisLabel: { color: '#1f2937' }
+            },
+            yAxis: {
+                type: 'value',
+                axisLine: { show: false },
+                axisLabel: { color: '#1f2937' },
+                splitLine: { lineStyle: { color: '#eee' } }
+            },
+            series: [
+                {
+                    name: 'Reading',
+                    type: 'line',
+                    smooth: true,
+                    data: [15, 12, 8, 6],
+                    itemStyle: { color: 'rgba(87, 181, 231, 1)' },
+                    areaStyle: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                            { offset: 0, color: 'rgba(87, 181, 231, 0.1)' },
+                            { offset: 1, color: 'rgba(87, 181, 231, 0)' }
+                        ])
+                    }
+                },
+                {
+                    name: 'Listening',
+                    type: 'line',
+                    smooth: true,
+                    data: [10, 8, 6, 4],
+                    itemStyle: { color: 'rgba(141, 211, 199, 1)' },
+                    areaStyle: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                            { offset: 0, color: 'rgba(141, 211, 199, 0.1)' },
+                            { offset: 1, color: 'rgba(141, 211, 199, 0)' }
+                        ])
+                    }
+                }
+            ]
+        };
+
+        const errorTypesOption = {
+            animation: false,
+            tooltip: {
+                trigger: 'item',
+                backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                borderColor: '#eee',
+                borderWidth: 1,
+                textStyle: { color: '#1f2937' }
+            },
+            series: [{
+                type: 'pie',
+                radius: ['60%', '80%'],
+                avoidLabelOverlap: false,
+                itemStyle: {
+                    borderRadius: 6,
+                    borderColor: '#fff',
+                    borderWidth: 2
+                },
+                label: { show: false },
+                emphasis: {
+                    label: { show: false }
+                },
+                data: [
+                    { value: 35, name: 'Main Idea', itemStyle: { color: 'rgba(87, 181, 231, 1)' } },
+                    { value: 25, name: 'Details', itemStyle: { color: 'rgba(141, 211, 199, 1)' } },
+                    { value: 20, name: 'Vocabulary', itemStyle: { color: 'rgba(251, 191, 114, 1)' } },
+                    { value: 20, name: 'Grammar', itemStyle: { color: 'rgba(252, 141, 98, 1)' } }
+                ]
+            }]
+        };
+
+        mistakesChart.setOption(mistakesOption);
+        errorTypesChart.setOption(errorTypesOption);
+
+        window.addEventListener('resize', () => {
+            mistakesChart.resize();
+            errorTypesChart.resize();
+        });
+    </script>
+</body>
+</html>

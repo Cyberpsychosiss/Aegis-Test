@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Academic Reading Test Results - Aegis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3D59',
+                        secondary: '#17B890'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        .question-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+        .timer { font-variant-numeric: tabular-nums; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="flex h-screen">
+        <aside class="w-64 bg-white border-r border-gray-100 flex flex-col">
+            <div class="p-6 border-b border-gray-100">
+                <a href="Aegis Home Page.html" class="text-2xl font-['Pacifico'] text-primary">Aegis</a>
+            </div>
+            <nav class="flex-1 p-4">
+                <div class="space-y-2">
+                    <a href="Web Dashboard.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                        <i class="ri-dashboard-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="Web Reading Module.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                        <i class="ri-book-open-line"></i>
+                        <span>Reading</span>
+                    </a>
+                    <a href="Web Listening Module.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                        <i class="ri-headphone-line"></i>
+                        <span>Listening</span>
+                    </a>
+                    <a href="Web Writing Module.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                        <i class="ri-edit-line"></i>
+                        <span>Writing</span>
+                    </a>
+                    <a href="Web Speaking Module.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                        <i class="ri-mic-line"></i>
+                        <span>Speaking</span>
+                    </a>
+                </div>
+                <div class="mt-8">
+                    <h3 class="px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider">Study Tools</h3>
+                    <div class="mt-4 space-y-2">
+                        <a href="Web Mock Exam.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                            <i class="ri-time-line"></i>
+                            <span>Mock Exam</span>
+                        </a>
+                        <a href="Web Progress Tracking.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                            <i class="ri-file-list-line"></i>
+                            <span>Progress Tracking</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <div class="p-4 border-t border-gray-100">
+                <div class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg cursor-pointer">
+                    <i class="ri-settings-line"></i>
+                    <span>Settings</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="flex-1 flex flex-col overflow-hidden">
+            <header class="bg-white border-b border-gray-100 px-8 py-4">
+                <div class="flex items-center justify-between">
+                    <h1 class="text-xl font-semibold text-gray-900">IELTS Academic Reading Test Results</h1>
+                    <div class="flex items-center gap-4">
+                        <a href="Web Mock Exam.html" class="text-sm text-primary hover:underline">Return to Test</a>
+                    </div>
+                </div>
+            </header>
+
+            <div class="flex-1 overflow-auto p-6">
+                <div class="max-w-3xl mx-auto space-y-8">
+                    <div class="bg-white p-8 rounded-xl shadow-sm">
+                        <h2 class="text-2xl font-semibold mb-4">Overall Band Score: 7.5</h2>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex items-start gap-4">
+                                <div class="w-1/2">
+                                    <h3 class="text-lg font-semibold mb-2">Comprehensive Score Overview</h3>
+                                    <p class="text-gray-600 mb-4">AI-generated band score prediction with 95% confidence level.</p>
+                                    <div id="scoreChart" style="width: 100%; height: 300px; padding-top: 20px;"></div>
+                                </div>
+                                <div class="w-1/2">
+                                    <h3 class="text-lg font-semibold mb-2">AI Insight Card</h3>
+                                    <p class="text-gray-600 mb-4">Your performance shows strong reading comprehension skills, but there are areas for improvement in time management and understanding complex texts.</p>
+                                    <ul class="list-disc list-inside text-gray-600">
+                                        <li>Key strengths: Identifying main ideas, understanding details</li>
+                                        <li>Areas for improvement: Time management, complex text comprehension</li>
+                                        <li>Personalized study recommendations: Focus on practice tests, timed reading exercises</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-semibold mb-4">Review Mistakes</h3>
+                        <div class="space-y-6">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-900 mb-2">AI Error Analysis Dashboard</h4>
+                                <p class="text-gray-600 mb-4">Pattern recognition in incorrect answers, common mistake categories, and time management impact analysis.</p>
+                                <div id="errorChart" style="width: 100%; height: 300px;"></div>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-900 mb-2">Detailed Mistake Breakdown</h4>
+                                <div class="space-y-4">
+                                    <div class="p-4 bg-white rounded-lg shadow">
+                                        <h5 class="font-semibold text-gray-900 mb-2">Question 5</h5>
+                                        <p class="text-gray-600 mb-2">Your answer: <span class="text-red-500">B</span></p>
+                                        <p class="text-gray-600 mb-2">Correct answer: <span class="text-green-500">A</span></p>
+                                        <p class="text-gray-600 mb-2">Explanation: The correct answer is A because...</p>
+                                        <p class="text-gray-600">Step-by-step correction guide and similar question patterns to watch for.</p>
+                                    </div>
+                                    <!-- Repeat for other mistakes -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-semibold mb-4">Performance Analytics</h3>
+                        <div class="space-y-6">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-900 mb-2">Time Management Analysis</h4>
+                                <div id="timeChart" style="width: 100%; height: 300px;"></div>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-900 mb-2">Question Type Proficiency Radar</h4>
+                                <div id="radarChart" style="width: 100%; height: 300px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <aside class="w-[30%] bg-white border-l border-gray-100 flex flex-col">
+            <div class="p-6 border-b border-gray-100">
+                <h2 class="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h2>
+                <div class="space-y-4">
+                    <button class="w-full py-2 text-white bg-primary hover:bg-primary/90 rounded-button cursor-pointer">Export AI Report</button>
+                    <button class="w-full py-2 text-white bg-primary hover:bg-primary/90 rounded-button cursor-pointer">Review Flagged Questions</button>
+                    <button class="w-full py-2 text-white bg-primary hover:bg-primary/90 rounded-button cursor-pointer">Share Results</button>
+                </div>
+            </div>
+            <div class="flex-1 overflow-auto p-6">
+                <h2 class="text-lg font-semibold text-gray-900 mb-4">AI Study Assistant</h2>
+                <div class="space-y-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-900 mb-2">Personalized Study Plan</h4>
+                        <p class="text-gray-600">Recommended practice materials and time management tips.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-900 mb-2">Strategy Adjustments</h4>
+                        <p class="text-gray-600">Suggestions for improving your study approach based on your performance.</p>
+                    </div>
+                </div>
+                <div class="space-y-4 mt-8">
+                    <h2 class="text-lg font-semibold text-gray-900 mb-4">Recommended Resources</h2>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-900 mb-2">IELTS Reading Practice</h4>
+                        <p class="text-gray-600">Access a variety of reading practice materials to improve your skills.</p>
+                        <a href="#" class="text-primary hover:underline">Start Practicing</a>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-900 mb-2">IELTS Listening Practice</h4>
+                        <p class="text-gray-600">Enhance your listening skills with targeted practice exercises.</p>
+                        <a href="#" class="text-primary hover:underline">Start Practicing</a>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-900 mb-2">IELTS Writing Tips</h4>
+                        <p class="text-gray-600">Get tips and strategies to improve your writing performance.</p>
+                        <a href="#" class="text-primary hover:underline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scoreChart = echarts.init(document.getElementById('scoreChart'));
+            const errorChart = echarts.init(document.getElementById('errorChart'));
+            const timeChart = echarts.init(document.getElementById('timeChart'));
+            const radarChart = echarts.init(document.getElementById('radarChart'));
+
+            const scoreOption = {
+                tooltip: {},
+                radar: {
+                    indicator: [
+                        { name: 'Reading', max: 9 },
+                        { name: 'Listening', max: 9 },
+                        { name: 'Speaking', max: 9 },
+                        { name: 'Writing', max: 9 }
+                    ]
+                },
+                series: [{
+                    name: 'Scores',
+                    type: 'radar',
+                    data: [
+                        {
+                            value: [7.5, 7.0, 6.5, 7.0],
+                            name: 'Current'
+                        }
+                    ]
+                }]
+            };
+
+            const errorOption = {
+                title: {
+                    text: 'Error Analysis'
+                },
+                tooltip: {},
+                xAxis: {
+                    type: 'category',
+                    data: ['Q1', 'Q2', 'Q3', 'Q4', 'Q5']
+                },
+                yAxis: {
+                    type: 'value'
+                },
+                series: [{
+                    data: [1, 0, 1, 1, 0],
+                    type: 'bar'
+                }]
+            };
+
+            const timeOption = {
+                title: {
+                    text: 'Time Management'
+                },
+                tooltip: {},
+                xAxis: {
+                    type: 'category',
+                    data: ['Q1', 'Q2', 'Q3', 'Q4', 'Q5']
+                },
+                yAxis: {
+                    type: 'value'
+                },
+                series: [{
+                    data: [2, 3, 4, 5, 6],
+                    type: 'line'
+                }]
+            };
+
+            const radarOption = {
+                tooltip: {},
+                radar: {
+                    indicator: [
+                        { name: 'Multiple Choice', max: 10 },
+                        { name: 'True/False', max: 10 },
+                        { name: 'Short Answer', max: 10 },
+                        { name: 'Matching', max: 10 }
+                    ]
+                },
+                series: [{
+                    name: 'Proficiency',
+                    type: 'radar',
+                    data: [
+                        {
+                            value: [8, 6, 7, 5],
+                            name: 'Current'
+                        }
+                    ]
+                }]
+            };
+
+            scoreChart.setOption(scoreOption);
+            errorChart.setOption(errorOption);
+            timeChart.setOption(timeOption);
+            radarChart.setOption(radarOption);
+        });
+    </script>
+</body>
+</html>
